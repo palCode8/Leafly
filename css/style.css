@@ -39,6 +39,12 @@ header {
   top: 0;
   z-index: 999;
 }
+.menu-open {
+  display: none;
+}
+.menu-close {
+  display: none;
+}
 nav {
   width: 90%;
   display: flex;
@@ -80,6 +86,9 @@ i {
   font-weight: 500;
   letter-spacing: -2px;
 }
+.logo.two {
+  display: none;
+}
 
 .contact-btn {
   /* background-color: red; */
@@ -118,11 +127,11 @@ i {
   color: var(--color-outline);
 }
 
+/* section-two */
 #featured-product {
   padding: 80px 5%;
 }
 
-/* section-two */
 .section-heading {
   font-size: clamp(32px, 3vw, 200px);
   font-weight: 200;
@@ -143,7 +152,6 @@ i {
 }
 
 .feature-showcase .feature-product {
-  /* background-color: var(--color-sec); */
   width: 33%;
   aspect-ratio: 1/1.2;
   position: relative;
@@ -244,7 +252,7 @@ i {
 }
 #showcase .showcase-inner .desc {
   width: 50%;
- padding: 20px;
+  padding: 20px;
 }
 .showcase-inner .desc p {
   font-size: 16px;
@@ -303,4 +311,97 @@ footer {
 }
 footer .logo {
   text-align: center;
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+  /* navbar */
+  header {
+    padding: 0 5%;
+    justify-content: space-between;
+  }
+  .menu-open {
+    display: block;
+  }
+  .menu-close {
+    display: block;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+  }
+  .menu-open, .menu-close {
+    font-size: 20px;
+  }
+  nav {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: var(--color-sec);
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .nav.nav-close {
+    right: -100%;
+  }
+  .nav.nav-open {
+    right: 0;
+  }
+  .nav-part1,
+  .nav-part3 {
+    width: max-content;
+    height: fit-content;
+  }
+  .nav-part1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-part3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-part3 i {
+    display: none;
+  }
+
+  .logo.one {
+    display: none;
+  }
+  .logo.two {
+    display: block;
+    position: relative;
+    z-index: 9999;
+  }
+  .feature-showcase {
+    flex-direction: column;
+    gap: 160px;
+  }
+  .feature-showcase .feature-product {
+    width: 100%;
+  }
+  #showcase .showcase-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #showcase .showcase-inner .desc {
+    width: 100%;
+    padding: 0;
+  }
+
+  #showcase .showcase-inner .img {
+    width: 100%;
+  }
 }
